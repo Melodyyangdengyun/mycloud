@@ -4,7 +4,6 @@ import com.ydy.mycloud.sys.po.Result;
 
 /**
  * @ClassName ResultUtil
- * @Description TODO
  * @Author DiYun
  * @Date 2018/12/9 10:29
  * @Version 1.0

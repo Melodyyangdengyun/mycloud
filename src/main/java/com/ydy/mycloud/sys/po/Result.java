@@ -5,7 +5,6 @@ import lombok.Data;
 /**
  * http请求返回的最外层对象
  * @ClassName Result
- * @Description TODO
  * @Author DiYun
  * @Date 2018/12/9 10:27
  * @Version 1.0

@@ -3,15 +3,12 @@ package com.ydy.mycloud.sys;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
  * @ClassName BasePo支持类
- * @Description TODO
  * @Author DiYun
  * @Date 2018/12/8 12:40
  * @Version 1.0

@@ -48,6 +48,11 @@ public class CloudFilesController {
         return ResultUtil.success(cloudFilesService.save(cloudFiles));
     }
 
+    /**
+     *TODO
+     *2018/12/9 12:20
+     * 异常搞定
+     **/
     @GetMapping(value = "/getName/{id}")
     public void getName(@PathVariable("id") Integer id) {
         cloudFilesService.getName(id);

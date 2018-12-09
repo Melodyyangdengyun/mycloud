@@ -11,7 +11,6 @@ import java.util.Date;
 
 /**
  * @ClassName DataPo
- * @Description TODO
  * @Author DiYun
  * @Date 2018/12/8 12:38
  * @Version 1.0

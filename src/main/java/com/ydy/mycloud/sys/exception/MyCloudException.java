@@ -5,7 +5,6 @@ import lombok.Data;
 
 /**
  * @ClassName MyCloudException
- * @Description TODO
  * @Author DiYun
  * @Date 2018/12/9 11:45
  * @Version 1.0
