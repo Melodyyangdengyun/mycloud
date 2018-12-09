@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  * @ClassName CloudFiles
@@ -23,8 +24,14 @@ import javax.persistence.Table;
 @AllArgsConstructor
 public class CloudFiles extends DataPo<CloudFiles> {
     private static final long serialVersionUID = -3667023814036080394L;
+    @NotNull(message = "名称不能为空")
     @Column(name = "name",nullable = false)
     private String name;
+    @NotNull(message = "文件名不能为空")
     @Column(name = "file_name",nullable = false)
     private String fileName;
+
+    public CloudFiles(Integer id) {
+        this.id = id;
+    }
 }

@@ -7,11 +7,10 @@ import com.ydy.mycloud.sys.po.Result;
 import com.ydy.mycloud.sys.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -32,5 +31,25 @@ public class CloudFilesController {
     @GetMapping(value = "/all")
     public Result<List<CloudFiles>> getAll() {
         return ResultUtil.success(cloudFilesService.getAll());
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "byId/{id}")
+    public Result<CloudFiles> cloudFilesFindOne(@PathVariable("id") Integer id) {
+        return ResultUtil.success(cloudFilesService.findOne(id));
+    }
+
+    @ResponseBody
+    @PostMapping(value = "/add")
+    public Result<CloudFiles> cloudFilesAdd(@Valid CloudFiles cloudFiles, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return ResultUtil.error(1, bindingResult.getFieldError().getDefaultMessage());
+        }
+        return ResultUtil.success(cloudFilesService.save(cloudFiles));
+    }
+
+    @GetMapping(value = "/getName/{id}")
+    public void getName(@PathVariable("id") Integer id) {
+        cloudFilesService.getName(id);
     }
 }

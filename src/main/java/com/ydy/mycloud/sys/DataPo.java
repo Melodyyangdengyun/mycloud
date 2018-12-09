@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -20,8 +21,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class DataPo<T> extends BasePo<T> {
-    @Column(name = "create_date",nullable = false)
-    private Date createDate;	// 创建日期
+    @NotNull(message = "创建日期不能为空")
+    @Column(name = "create_date", nullable = false)
+    private Date createDate;    // 创建日期
+    @NotNull(message = "更新日期不能为空")
     @Column(name = "update_date",nullable = false)
     private Date updateDate;    // 更新日期
 }
